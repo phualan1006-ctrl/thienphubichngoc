@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thien Phu Bich Ngoc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+   <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+
+    }
+
+    video.bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .content {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      top: 40%;
+      font-size: 2em;
+    }
+    button {
+  all: unset;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#days {
+  color: #a0ffff;
+}
+  </style>
+
+</head>
+<body>
+  <video class="bg-video" autoplay loop muted playsinline>
+    <source src="bg.mp4" type="video/mp4">
+  </video>
+  <div class="content">
+    <div id="days">0</div>
+    <div class="container">
+    <button onclick="location.href='bn.html'">
+     <img src="but.jpg" alt="Icon">
+    </button>
+    </div>
+  </div>
+
+
+  <script>
+    // Ngày bắt đầu: 23/08/2025
+    const startDate = new Date(2025, 2, 9);
+
+    function atMidnightLocal(d) {
+      const x = new Date(d);
+      x.setHours(0, 0, 0, 0);
+      return x;
+    }
+
+    function updateCounter() {
+      const today = atMidnightLocal(new Date());
+      const start = atMidnightLocal(startDate);
+      const msPerDay = 1000 * 60 * 60 * 24;
+
+      const diffDays = Math.floor((today - start) / msPerDay);
+      document.getElementById('days').textContent ='Tụi mình yêu nhau được '+ diffDays + ' ngày♥';
+    }
+
+    function scheduleMidnightTick() {
+      const now = new Date();
+      const tomorrow = new Date(now);
+      tomorrow.setHours(24, 0, 0, 0);
+      const msUntilMidnight = tomorrow - now;
+
+      setTimeout(() => {
+        updateCounter();
+        setInterval(updateCounter, 24 * 60 * 60 * 1000);
+      }, msUntilMidnight);
+    }
+
+    updateCounter();
+    scheduleMidnightTick();
+  </script>
+</body>
+</html>
