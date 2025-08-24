@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Anh Yêu Em ❤️</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 50px;
+      text-shadow: 2px 2px 8px #ff1493;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493; }
+      to { text-shadow: 0 0 20px #ff69b4, 0 0 40px #ff1493; }
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 ảnh một hàng, đều nhau */
+  gap: 20px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+  .gallery img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .heart {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+    }
+        h3 {
+      text-align: left;
+      margin-left: 0; /* Đảm bảo không bị đẩy vào */
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(1); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Anh Yêu Em ❤️</h1>
+
+  <div class="gallery">
+    <img src="1.jpg" alt="Ảnh 1">
+    <img src="2.jpg" alt="Ảnh 2">
+    <img src="3.jpg" alt="Ảnh 3">
+    <img src="4.jpg" alt="Ảnh 4">
+  </div>
+
+  <h2>
+      Thư gửi Bn ❤️
+  </h2>
+  <h3>tp hong biết bắt đầu từ đâu, nhma tp muon nói là tp yêu bn nhieu lam, tp tính để cái này kĩ niệm nữa năm mới tặng á, mà thoi, giờ tp tặng luonnn, để bữa kĩ niệm nữa năm tp dẫn bn đi ăn nem nướng nhaaa,bn oi vậy là anh với bn quen được nữa năm r đó, săp tới là một năm, trải qua bao nhiêu thăng trầm với nhau rồi, khóc xưng mắt vì nhauuu rồi, nhma tuyệt vời ở chỗ hong đứa nào muốn rời đi,tp hạnh phúc lắm, bn hong tin chứ ngày nào tp cũng cảm ơn vì k ai lấy bn của tp đi, tp nhận ra mình rất iu bn từ lúc mới iu rồi, cứ như là kiếp trước bn yeu tp lam á, nên giờ tp dù mới gặp lần đầu mà yêu bn vãi,bn à tp biết bn kiệm lời yêu hơn tp, nên bn hong có sì pam đươc dài như anh, nhưng hong sao, tp thấy bn yeu tp nhiều lam, bn ơi dù cho mới yêu hay đến bây giờ và cả tương lai tp vân y như v thôi, vẫn muốn làm bạn trai của bn,che chở,bảo vệ bn,và sau này kết hôn cùng bn,ai ăn hiếp bn thì tp k có tha đâu,bn nè,sau này có gì cũng k được giấu anh nha chưa, bị ăn hiếp, hay bị tiêu cực cũng kể raaa, để anh dỗ anh thương, bn ơi tp biet tp k khéo tay nhma hi vọng bn thích món quà này,bn thấy tp đưa mấy ảnh đó lên de thuonggg hongg,à mà lâu lâu bn muốn thay ảnh mới bn nói tp,tp sửa nhannnh lắm , ý tp là thay ảnh mới lên web này á, ảnh bn á, còn thư này tp sẽ giữ lại v mãi luôn,lâu lâu cãi nhau với tp, bn cứ lấy ra đọc nhaaaa, tp iuuuuuuuuuuuuuuuuu bn nhieuuuuuuuu ❤️</h3>
+
+  <div class="hearts"></div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 15 + "px";
+      heart.innerText = "❤️";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      document.querySelector(".hearts").appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
